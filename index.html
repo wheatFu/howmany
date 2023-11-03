@@ -5,24 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./lib/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="box">
         <header>
-          <a href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            VIDEO
-          </a>
+          <div class="video active">
+            <a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              VIDEO
+            </a>
+          </div>
+          <div class="upload">
+            <a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              UPLOAD
+            </a>
+          </div>
         </header>
-        <section>2</section>
-        <div class="list">3</div>
+        <section>
+          <div class="video-content">
+            <img
+              style="
+                display: block;
+                -webkit-user-select: none;
+                margin: auto;
+                background-color: hsl(0, 0%, 25%);
+              "
+              src="http://192.168.101.106:8081/video"
+              width="1245"
+              height="700"
+            />
+          </div>
+          <div class="upload-content hidden">上传</div>
+        </section>
+        <section class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Apple</td>
+                <td>2</td>
+                <td>🔥</td>
+              </tr>
+              <tr>
+                <td>Banana</td>
+                <td>5</td>
+                <td>🌟</td>
+              </tr>
+              <tr>
+                <td>Cokes</td>
+                <td>10</td>
+                <td>🥵</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </div>
     </div>
   </body>
-
   <script src="./index.js"></script>
 </html>
