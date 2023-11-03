@@ -61,7 +61,17 @@ section {
 .video-content,
 .upload-content {
   width: 100%;
-  height: 100%;
+  height: 500px;
+}
+
+#image-holder {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+#image-holder img {
+  width: 100%;
+  height: auto;
 }
 
 .box a {

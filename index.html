@@ -35,16 +35,18 @@
             <img
               style="
                 display: block;
-                -webkit-user-select: none;
                 margin: auto;
                 background-color: hsl(0, 0%, 25%);
               "
-              src="http://192.168.101.106:8081/video"
-              width="1245"
-              height="700"
+              src="http://10.109.10.48:8081/video"
+              width="1240"
+              height="500"
             />
           </div>
-          <div class="upload-content hidden">上传</div>
+          <div class="upload-content hidden">
+            <input id="fileUpload" type="file" multiple /><br />
+            <div id="image-holder"></div>
+          </div>
         </section>
         <section class="table-wrapper">
           <table>
