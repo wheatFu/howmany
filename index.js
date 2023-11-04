@@ -12,24 +12,35 @@ $(function () {
     }
   });
 
+  $('#addFileBtn').click(function () { $('#fileUpload').click() })
+
+  $('#image-holder').on('click','.remove-icon', function(el) {
+    console.log('123123',$(el.currentTarget).parentsUntil('#image-holder'))
+    $(el.currentTarget).parentsUntil('#image-holder').remove()
+  })
+
   $('#fileUpload').on('change', function () {
     //获取上传文件的数量
     var countFiles = $(this)[0].files.length;
+    console.log(countFiles)
 
     var imgPath = $(this)[0].value;
     var img = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
     var image_holder = $('#image-holder');
-    image_holder.empty();
+    image_holder.children().not(":first").remove();
 
     if (img == 'gif' || img == 'png' || img == 'jpg' || img == 'jpeg') {
       if (typeof FileReader != 'undefined') {
         for (var i = 0; i < countFiles; i++) {
           var reader = new FileReader();
           reader.onload = function (e) {
-            $('<img />', {
-              src: e.target.result,
-              class: 'thumb-image',
-            }).appendTo(image_holder);
+            $('<div>', { class: 'img-container'})
+              .append($('<img />', {
+                src: e.target.result,
+                class: 'thumb-image',
+              }))
+              .append($('<img />', {src: './assets/delete_filled.png', class: 'remove-icon'}))
+              .appendTo(image_holder);
           };
 
           image_holder.show();
@@ -41,6 +52,7 @@ $(function () {
     } else {
       alert('请选择图像文件。');
     }
+    $(this).val(null);
   });
 
   connectWs();

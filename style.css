@@ -66,12 +66,43 @@ section {
 
 #image-holder {
   width: 100%;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
 }
-#image-holder img {
-  width: 100%;
-  height: auto;
+
+#image-holder .img-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+#image-holder .img-container .thumb-image {
+  width: 100px;
+  max-height: 100px;
+  margin: 20px;
+}
+
+#image-holder .img-container .remove-icon {
+  position: absolute;
+  display: none;
+} 
+
+#image-holder .img-container:hover .remove-icon {
+  display: inline-block;
+}
+
+#image-holder .remove-icon{
+  width: 25px;
+  position: absolute;
+  right: 10px;
+  margin: 0;
+  top: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.add-file {
+  width: 140px;
 }
 
 .box a {
